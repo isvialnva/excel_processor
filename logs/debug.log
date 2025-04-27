@@ -525,3 +525,52 @@ INFO 2025-04-27 22:50:28,326 basehttp "POST /excel_files/10/ HTTP/1.1" 302 0
 INFO 2025-04-27 22:50:28,343 basehttp "GET /excel_files/10/ HTTP/1.1" 200 8252
 INFO 2025-04-27 22:50:29,718 basehttp "GET /data_models/table/8/ HTTP/1.1" 200 59735
 INFO 2025-04-27 22:50:45,563 basehttp "GET /data_models/table/8/ HTTP/1.1" 200 74393
+INFO 2025-04-27 23:02:23,946 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 23:02:28,124 basehttp "GET /excel_files/10/ HTTP/1.1" 200 8252
+INFO 2025-04-27 23:02:30,302 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6563
+INFO 2025-04-27 23:02:32,739 basehttp "POST /excel_files/list/ HTTP/1.1" 302 0
+INFO 2025-04-27 23:02:32,754 basehttp "GET /excel_files/list/ HTTP/1.1" 200 2822
+INFO 2025-04-27 23:02:34,326 basehttp "GET /excel_files/upload/ HTTP/1.1" 200 826
+INFO 2025-04-27 23:02:49,053 basehttp "POST /excel_files/upload/ HTTP/1.1" 302 0
+INFO 2025-04-27 23:02:49,070 basehttp "GET /excel_files/11/ HTTP/1.1" 200 8605
+DEBUG 2025-04-27 23:02:50,882 views Iniciando procesamiento de hoja 11
+INFO 2025-04-27 23:02:50,883 views Iniciando creación de tabla para hoja 11: report21
+INFO 2025-04-27 23:02:51,049 model_factory Procesando lote para tabla 11_report21: 428 filas, 18 columnas
+INFO 2025-04-27 23:02:52,883 model_factory Lote procesado: 428 filas, 7704 celdas
+INFO 2025-04-27 23:02:52,892 views Tabla creada exitosamente: 11_report21 con 428 filas
+INFO 2025-04-27 23:02:52,894 basehttp "POST /excel_files/11/ HTTP/1.1" 302 0
+INFO 2025-04-27 23:02:52,912 basehttp "GET /excel_files/11/ HTTP/1.1" 200 8255
+INFO 2025-04-27 23:02:54,477 basehttp "GET /data_models/table/9/ HTTP/1.1" 200 73618
+INFO 2025-04-27 23:03:21,402 export_service Iniciando exportación a Parquet para tabla 11_report21
+INFO 2025-04-27 23:03:21,402 export_service Total de filas: 428
+INFO 2025-04-27 23:03:21,402 export_service Procesando en 1 lotes de 1000 filas
+INFO 2025-04-27 23:03:21,506 export_service Archivo Parquet generado exitosamente: /Users/isvialnva/Proyectos/excel_processor/excel_processor/media/EXPORTS/PARQUET/11_report21_20250427_230321.parquet
+INFO 2025-04-27 23:03:21,506 export_service Exportación registrada con ID: 3
+INFO 2025-04-27 23:03:21,509 basehttp "GET /data_models/table/9/export/parquet/?download=false HTTP/1.1" 302 0
+INFO 2025-04-27 23:03:21,637 basehttp "GET /data_models/table/9/ HTTP/1.1" 200 73618
+INFO 2025-04-27 23:05:41,992 basehttp "GET /excel_files/11/ HTTP/1.1" 200 8255
+INFO 2025-04-27 23:05:43,835 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6563
+INFO 2025-04-27 23:05:45,989 basehttp "GET /excel_files/upload/ HTTP/1.1" 200 826
+INFO 2025-04-27 23:06:02,500 basehttp "POST /excel_files/upload/ HTTP/1.1" 302 0
+INFO 2025-04-27 23:06:02,518 basehttp "GET /excel_files/12/ HTTP/1.1" 200 9996
+DEBUG 2025-04-27 23:06:03,903 views Iniciando procesamiento de hoja 12
+INFO 2025-04-27 23:06:03,904 views Iniciando creación de tabla para hoja 12: Table
+INFO 2025-04-27 23:06:04,080 model_factory Procesando lote para tabla 12_Table: 1000 filas, 22 columnas
+INFO 2025-04-27 23:06:07,665 model_factory Lote procesado: 1000 filas, 22000 celdas
+INFO 2025-04-27 23:06:07,673 model_factory Procesando lote para tabla 12_Table: 124 filas, 22 columnas
+INFO 2025-04-27 23:06:08,089 model_factory Lote procesado: 124 filas, 2728 celdas
+INFO 2025-04-27 23:06:08,097 views Tabla creada exitosamente: 12_Table con 1124 filas
+INFO 2025-04-27 23:06:08,101 basehttp "POST /excel_files/12/ HTTP/1.1" 302 0
+INFO 2025-04-27 23:06:08,118 basehttp "GET /excel_files/12/ HTTP/1.1" 200 9647
+INFO 2025-04-27 23:06:11,773 basehttp "GET /data_models/table/10/ HTTP/1.1" 200 72942
+INFO 2025-04-27 23:06:13,153 export_service Iniciando exportación a Parquet para tabla 12_Table
+INFO 2025-04-27 23:06:13,153 export_service Total de filas: 1124
+INFO 2025-04-27 23:06:13,154 export_service Procesando en 2 lotes de 1000 filas
+INFO 2025-04-27 23:06:13,263 export_service Archivo Parquet generado exitosamente: /Users/isvialnva/Proyectos/excel_processor/excel_processor/media/EXPORTS/PARQUET/12_table_20250427_230613.parquet
+INFO 2025-04-27 23:06:13,264 export_service Exportación registrada con ID: 4
+INFO 2025-04-27 23:06:13,269 basehttp "GET /data_models/table/10/export/parquet/?download=false HTTP/1.1" 302 0
+INFO 2025-04-27 23:06:13,403 basehttp "GET /data_models/table/10/ HTTP/1.1" 200 72942
+INFO 2025-04-27 23:08:54,652 basehttp "GET /excel_files/12/ HTTP/1.1" 200 9647
+INFO 2025-04-27 23:08:56,679 basehttp "GET /excel_files/list/ HTTP/1.1" 200 10020
+INFO 2025-04-27 23:09:02,433 basehttp "GET /excel_files/11/ HTTP/1.1" 200 8255
+INFO 2025-04-27 23:09:04,789 basehttp "GET /data_models/table/9/ HTTP/1.1" 200 73618

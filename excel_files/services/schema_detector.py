@@ -70,9 +70,7 @@ class SchemaDetector:
 
     @staticmethod
     def _detect_data_type(series):
-        """
-
-        """
+        """Detecta el tipo de datos de una serie de pandas."""
         # Eliminar valores nulos para la detección
         series = series.dropna()
 
@@ -80,38 +78,25 @@ class SchemaDetector:
         if len(series) == 0:
             return 'string'
 
-        # Comprobar si son fechas
-        try:
-            if pd.api.types.is_datetime64_dtype(series):
-                return 'datetime'
-
-            # Intentar convertir a datetime
-            pd.to_datetime(series, errors='raise')
-            # Si algunas tienen hora, es datetime, sino es date
-            if any(str(val).find(':') > 0 for val in series if not pd.isna(val)):
-                return 'datetime'
-            return 'date'
-        except:
-            pass
-
-        # Comprobar si son booleanos
-        if set(series.unique()) <= {True, False, 1, 0, '1', '0', 'yes', 'no', 'true', 'false', 'si', 'no'}:
-            return 'boolean'
-
-        # Comprobar si son enteros
+        # Primero verificar si son enteros o flotantes
         if pd.api.types.is_integer_dtype(series):
             return 'integer'
 
-        # Intentar convertir a enteros
-        try:
-            series.astype(int)
-            return 'integer'
-        except:
-            pass
-
-        # Comprobar si son flotantes
         if pd.api.types.is_float_dtype(series):
             return 'float'
+
+        # Verificar booleanos
+        if set(series.unique()) <= {True, False, 1, 0, '1', '0', 'yes', 'no', 'true', 'false', 'si', 'no'}:
+            return 'boolean'
+
+        # Intentar convertir a enteros si no es ya un tipo numérico
+        try:
+            # Si todos los valores pueden convertirse a enteros sin pérdida
+            integers = series.astype(int)
+            if (integers == series).all():
+                return 'integer'
+        except:
+            pass
 
         # Intentar convertir a flotantes
         try:
@@ -119,6 +104,33 @@ class SchemaDetector:
             return 'float'
         except:
             pass
+
+        # Verificar si tienen formato de fecha
+        # Primero, comprobar si los valores tienen patrones típicos de fechas
+        date_patterns = [
+            r'\d{1,4}[-/]\d{1,2}[-/]\d{1,4}',  # 2023-04-25, 04/25/2023, etc.
+            r'\d{1,2}[-/]\s*[a-zA-Z]{3,9}[-/]\s*\d{2,4}',  # 25-Apr-2023, etc.
+        ]
+
+        sample_size = min(20, len(series))
+        sample = series.sample(sample_size) if len(series) > sample_size else series
+
+        # Verificar si al menos el 80% de la muestra tiene formato de fecha
+        date_like_count = sum(1 for val in sample if any(re.search(pattern, str(val)) for pattern in date_patterns))
+        if date_like_count >= sample_size * 0.8:
+            try:
+                # Ahora intentar convertir a datetime
+                pd.to_datetime(series, errors='raise')
+                # Si algunas tienen hora, es datetime, sino es date
+                if any(str(val).find(':') > 0 for val in series if not pd.isna(val)):
+                    return 'datetime'
+                return 'date'
+            except:
+                pass
+
+        # Si es un tipo datetime conocido
+        if pd.api.types.is_datetime64_dtype(series):
+            return 'datetime'
 
         # Por defecto, tratar como texto
         return 'string'

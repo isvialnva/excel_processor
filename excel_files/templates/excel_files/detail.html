@@ -1,10 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'excel_files/base.html' %}
+{% load excel_filters %}
 
-</body>
-</html>
+{% block title %}Detalles del archivo: {{ excel_file.name }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Información del archivo -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>{{ excel_file.name }}</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Descripción:</strong> {{ excel_file.description|default:"Sin descripción" }}</p>
+            <p><strong>Fecha de carga:</strong> {{ excel_file.uploaded_at|date:"d/m/Y H:i" }}</p>
+            <p><strong>Estado:</strong> 
+                {% if excel_file.processed %}
+                    <span class="badge bg-success">Procesado</span>
+                {% else %}
+                    <span class="badge bg-warning">Pendiente</span>
+                {% endif %}
+            </p>
+            {% if excel_file.error %}
+                <div class="alert alert-danger">
+                    <strong>Error:</strong> {{ excel_file.error }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Hojas del Excel -->
+    <h3>Hojas</h3>
+    <div class="list-group mb-4">
+        {% for sheet in sheets %}
+            <div class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5>{{ sheet.name }}</h5>
+                        <p class="mb-1">Filas: {{ sheet.row_count }}</p>
+                        <small>
+                            {% if sheet.processed %}
+                                <span class="badge bg-success">Procesada</span>
+                            {% else %}
+                                <span class="badge bg-warning">Pendiente</span>
+                            {% endif %}
+                        </small>
+                    </div>
+                    <div>
+                        {% if sheet.data_table %}
+
+                        {% else %}
+                            <form method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="sheet_id" value="{{ sheet.id }}">
+                                <button type="submit" class="btn btn-outline-primary btn-sm">
+                                    Procesar hoja
+                                </button>
+                            </form>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <!-- Columnas detectadas -->
+                <div class="mt-3">
+                    <h6>Columnas detectadas:</h6>
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Nombre original</th>
+                                    <th>Nombre normalizado</th>
+                                    <th>Tipo de datos</th>
+                                    <th>¿Permite nulos?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for column in sheet.columns.all %}
+                                <tr>
+                                    <td>{{ column.original_name }}</td>
+                                    <td>{{ column.name }}</td>
+                                    <td>{{ column.get_data_type_display }}</td>
+                                    <td>{{ column.nullable|yesno:"Sí,No" }}</td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="4" class="text-center">No se han detectado columnas</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="list-group-item text-center">
+                <p>No se han detectado hojas en este archivo</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="mb-4">
+        <a href="{% url 'excel_files:list' %}" class="btn btn-outline-secondary">
+            Volver a la lista
+        </a>
+    </div>
+</div>
+{% endblock %}

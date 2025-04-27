@@ -9,3 +9,604 @@ WARNING 2025-04-27 18:15:07,454 log Not Found: /ExcelFileUploadView/
 WARNING 2025-04-27 18:15:07,454 basehttp "GET /ExcelFileUploadView/ HTTP/1.1" 404 2399
 INFO 2025-04-27 19:05:02,627 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/excel_files/services/file_manager.py changed, reloading.
 INFO 2025-04-27 19:05:03,685 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 19:13:33,926 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 19:13:52,354 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/excel_files/urls.py changed, reloading.
+INFO 2025-04-27 19:13:54,310 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-27 19:13:57,070 log Not Found: /
+WARNING 2025-04-27 19:13:57,071 basehttp "GET / HTTP/1.1" 404 2321
+WARNING 2025-04-27 19:14:16,928 log Not Found: /list
+WARNING 2025-04-27 19:14:16,928 basehttp "GET /list HTTP/1.1" 404 2351
+WARNING 2025-04-27 19:14:20,623 log Not Found: /list/
+WARNING 2025-04-27 19:14:20,623 basehttp "GET /list/ HTTP/1.1" 404 2354
+ERROR 2025-04-27 19:36:59,167 log Internal Server Error: /excel_files/list/
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/backends/django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/backends/django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+ERROR 2025-04-27 19:36:59,173 basehttp "GET /excel_files/list/ HTTP/1.1" 500 125765
+ERROR 2025-04-27 19:38:32,445 log Internal Server Error: /excel_files/list/
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/backends/django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/backends/django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+ERROR 2025-04-27 19:38:32,449 basehttp "GET /excel_files/list/ HTTP/1.1" 500 125765
+ERROR 2025-04-27 19:39:07,621 log Internal Server Error: /excel_files/list/
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/urls/base.py", line 81, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'excel_files'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/urls/base.py", line 92, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'excel_files' is not a registered namespace
+ERROR 2025-04-27 19:39:07,626 basehttp "GET /excel_files/list/ HTTP/1.1" 500 160844
+INFO 2025-04-27 19:39:48,423 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/excel_files/urls.py changed, reloading.
+INFO 2025-04-27 19:39:49,402 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 19:40:35,339 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/excel_processor/urls.py changed, reloading.
+INFO 2025-04-27 19:40:36,223 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 19:40:58,661 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/excel_processor/urls.py changed, reloading.
+INFO 2025-04-27 19:40:59,292 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 19:41:40,949 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/excel_files/urls.py changed, reloading.
+INFO 2025-04-27 19:41:41,837 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-27 19:41:47,791 log Not Found: /
+WARNING 2025-04-27 19:41:47,793 basehttp "GET / HTTP/1.1" 404 2321
+INFO 2025-04-27 19:41:56,284 basehttp "GET /excel_files/list/ HTTP/1.1" 200 2822
+INFO 2025-04-27 19:42:00,453 basehttp "GET /excel_files/upload/ HTTP/1.1" 200 123
+INFO 2025-04-27 19:42:09,595 basehttp "GET /excel_files/list/ HTTP/1.1" 200 2822
+INFO 2025-04-27 19:42:10,496 basehttp "GET /excel_files/list/?processed= HTTP/1.1" 200 2822
+INFO 2025-04-27 19:42:12,772 basehttp "GET /excel_files/upload/ HTTP/1.1" 200 123
+INFO 2025-04-27 19:43:21,410 basehttp "GET /excel_files/upload/ HTTP/1.1" 200 143
+INFO 2025-04-27 19:43:58,764 basehttp "GET /excel_files/upload/ HTTP/1.1" 200 796
+INFO 2025-04-27 19:55:57,658 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 19:56:03,041 basehttp "GET /excel_files/list/?processed= HTTP/1.1" 200 2822
+INFO 2025-04-27 19:56:05,773 basehttp "GET /excel_files/upload/ HTTP/1.1" 200 826
+ERROR 2025-04-27 19:56:22,245 file_manager Error al leer hojas de Excel: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+INFO 2025-04-27 19:56:22,248 basehttp "POST /excel_files/upload/ HTTP/1.1" 302 0
+ERROR 2025-04-27 19:56:22,384 log Internal Server Error: /excel_files/1/
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+KeyError: 'data_tables|get_item:sheet.id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/smartif.py", line 182, in translate_token
+    return self.create_var(token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'get_item'
+ERROR 2025-04-27 19:56:22,414 basehttp "GET /excel_files/1/ HTTP/1.1" 500 254330
+INFO 2025-04-27 19:56:45,021 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6752
+ERROR 2025-04-27 19:56:52,266 log Internal Server Error: /excel_files/1/
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+KeyError: 'data_tables|get_item:sheet.id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/smartif.py", line 182, in translate_token
+    return self.create_var(token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'get_item'
+ERROR 2025-04-27 19:56:52,282 basehttp "GET /excel_files/1/ HTTP/1.1" 500 254328
+INFO 2025-04-27 19:56:56,732 basehttp "POST /excel_files/list/ HTTP/1.1" 302 0
+INFO 2025-04-27 19:56:56,748 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6752
+ERROR 2025-04-27 19:56:57,807 file_manager Error al leer hojas de Excel: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+INFO 2025-04-27 19:56:57,808 basehttp "POST /excel_files/list/ HTTP/1.1" 302 0
+INFO 2025-04-27 19:56:57,825 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6752
+ERROR 2025-04-27 19:57:07,877 log Internal Server Error: /excel_files/1/
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+KeyError: 'data_tables|get_item:sheet.id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/smartif.py", line 182, in translate_token
+    return self.create_var(token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'get_item'
+ERROR 2025-04-27 19:57:07,882 basehttp "GET /excel_files/1/ HTTP/1.1" 500 254400
+ERROR 2025-04-27 20:02:48,602 log Internal Server Error: /excel_files/1/
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 1035, in find_library
+    return parser.libraries[name]
+KeyError: 'excel_filters'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 1097, in load
+    lib = find_library(parser, name)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 1037, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'excel_filters' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+i18n
+l10n
+log
+static
+tz
+ERROR 2025-04-27 20:02:48,622 basehttp "GET /excel_files/1/ HTTP/1.1" 500 197042
+INFO 2025-04-27 20:04:09,185 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/excel_files/views.py changed, reloading.
+INFO 2025-04-27 20:04:10,219 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 20:04:19,481 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/excel_files/views.py changed, reloading.
+INFO 2025-04-27 20:04:20,142 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 20:04:22,669 basehttp "GET /excel_files/1/ HTTP/1.1" 200 1277
+INFO 2025-04-27 20:04:48,684 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-27 20:04:51,506 log Not Found: /
+WARNING 2025-04-27 20:04:51,507 basehttp "GET / HTTP/1.1" 404 2321
+INFO 2025-04-27 20:05:01,790 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6752
+INFO 2025-04-27 20:05:07,259 basehttp "POST /excel_files/list/ HTTP/1.1" 302 0
+INFO 2025-04-27 20:05:07,276 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6752
+INFO 2025-04-27 20:05:10,579 basehttp "POST /excel_files/list/ HTTP/1.1" 302 0
+INFO 2025-04-27 20:05:10,594 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6752
+INFO 2025-04-27 20:05:11,314 basehttp "GET /excel_files/1/ HTTP/1.1" 200 3312
+ERROR 2025-04-27 20:05:13,636 model_factory Error al crear tabla de datos para hoja 1: La hoja Table no tiene definiciones de columnas
+ERROR 2025-04-27 20:05:13,637 model_factory Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/excel_processor/data_models/services/model_factory.py", line 32, in create_data_table_from_sheet
+    raise ValueError(f"La hoja {sheet.name} no tiene definiciones de columnas")
+ValueError: La hoja Table no tiene definiciones de columnas
+
+INFO 2025-04-27 20:05:13,638 basehttp "POST /excel_files/1/ HTTP/1.1" 302 0
+INFO 2025-04-27 20:05:13,655 basehttp "GET /excel_files/1/ HTTP/1.1" 200 3312
+ERROR 2025-04-27 20:05:21,198 model_factory Error al crear tabla de datos para hoja 1: La hoja Table no tiene definiciones de columnas
+ERROR 2025-04-27 20:05:21,199 model_factory Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/excel_processor/data_models/services/model_factory.py", line 32, in create_data_table_from_sheet
+    raise ValueError(f"La hoja {sheet.name} no tiene definiciones de columnas")
+ValueError: La hoja Table no tiene definiciones de columnas
+
+INFO 2025-04-27 20:05:21,200 basehttp "POST /excel_files/1/ HTTP/1.1" 302 0
+INFO 2025-04-27 20:05:21,216 basehttp "GET /excel_files/1/ HTTP/1.1" 200 3312
+ERROR 2025-04-27 20:05:22,846 model_factory Error al crear tabla de datos para hoja 1: La hoja Table no tiene definiciones de columnas
+ERROR 2025-04-27 20:05:22,847 model_factory Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/excel_processor/data_models/services/model_factory.py", line 32, in create_data_table_from_sheet
+    raise ValueError(f"La hoja {sheet.name} no tiene definiciones de columnas")
+ValueError: La hoja Table no tiene definiciones de columnas
+
+INFO 2025-04-27 20:05:22,848 basehttp "POST /excel_files/1/ HTTP/1.1" 302 0
+INFO 2025-04-27 20:05:22,865 basehttp "GET /excel_files/1/ HTTP/1.1" 200 3312
+INFO 2025-04-27 20:05:26,264 basehttp "GET /excel_files/1/ HTTP/1.1" 200 3312
+INFO 2025-04-27 20:05:48,186 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6752
+INFO 2025-04-27 20:05:52,163 basehttp "POST /excel_files/list/ HTTP/1.1" 302 0
+INFO 2025-04-27 20:05:52,177 basehttp "GET /excel_files/list/ HTTP/1.1" 200 2822
+INFO 2025-04-27 20:05:54,250 basehttp "GET /excel_files/upload/ HTTP/1.1" 200 826
+INFO 2025-04-27 20:06:12,999 basehttp "POST /excel_files/upload/ HTTP/1.1" 302 0
+INFO 2025-04-27 20:06:13,017 basehttp "GET /excel_files/2/ HTTP/1.1" 200 9984
+INFO 2025-04-27 20:06:27,385 basehttp "POST /excel_files/2/ HTTP/1.1" 302 0
+ERROR 2025-04-27 20:06:27,443 log Internal Server Error: /excel_files/2/
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/views/generic/detail.py", line 113, in get
+    context = self.get_context_data(object=self.object)
+  File "/Users/isvialnva/Proyectos/excel_processor/excel_processor/excel_files/views.py", line 68, in get_context_data
+    sheet.data_table = {
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/db/models/fields/related_descriptors.py", line 568, in __set__
+    raise ValueError(
+ValueError: Cannot assign "{'id': 1, 'name': '2_Table', 'row_count': 1124, 'created_at': datetime.datetime(2025, 4, 27, 20, 6, 22, 773634, tzinfo=datetime.timezone.utc)}": "ExcelSheet.data_table" must be a "DataTable" instance.
+ERROR 2025-04-27 20:06:27,447 basehttp "GET /excel_files/2/ HTTP/1.1" 500 82956
+INFO 2025-04-27 20:07:58,420 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/excel_files/views.py changed, reloading.
+INFO 2025-04-27 20:07:59,520 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 20:09:12,131 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/excel_files/views.py changed, reloading.
+INFO 2025-04-27 20:09:13,059 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-27 20:10:28,154 log Not Found: /
+WARNING 2025-04-27 20:10:28,155 basehttp "GET / HTTP/1.1" 404 2321
+INFO 2025-04-27 20:10:38,428 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6559
+INFO 2025-04-27 20:10:42,518 basehttp "POST /excel_files/list/ HTTP/1.1" 302 0
+INFO 2025-04-27 20:10:42,532 basehttp "GET /excel_files/list/ HTTP/1.1" 200 2822
+INFO 2025-04-27 20:10:44,438 basehttp "GET /excel_files/upload/ HTTP/1.1" 200 826
+INFO 2025-04-27 20:10:58,653 basehttp "POST /excel_files/upload/ HTTP/1.1" 302 0
+INFO 2025-04-27 20:10:58,674 basehttp "GET /excel_files/3/ HTTP/1.1" 200 9984
+INFO 2025-04-27 20:11:10,223 basehttp "POST /excel_files/3/ HTTP/1.1" 302 0
+ERROR 2025-04-27 20:11:10,307 log Internal Server Error: /excel_files/3/
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/urls/base.py", line 81, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'data_models'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/urls/base.py", line 92, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'data_models' is not a registered namespace
+ERROR 2025-04-27 20:11:10,316 basehttp "GET /excel_files/3/ HTTP/1.1" 500 187571
+INFO 2025-04-27 20:12:21,072 basehttp "POST /excel_files/3/ HTTP/1.1" 302 0
+INFO 2025-04-27 20:12:21,093 basehttp "GET /excel_files/3/ HTTP/1.1" 200 9508

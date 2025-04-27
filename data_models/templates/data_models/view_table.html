@@ -7,6 +7,27 @@
 <div class="container mt-4">
     <h2>{{ data_table.table_name }}</h2>
     <p>Total de filas: {{ table_data.total_rows }}</p>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>{{ data_table.table_name }}</h2>
+        <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle" type="button" id="exportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-file-export"></i> Exportar
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="exportDropdown">
+                <li>
+                    <a class="dropdown-item" href="{% url 'data_models:export_parquet' data_table.id %}?download=true">
+                        <i class="fas fa-download"></i> Descargar como Parquet
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'data_models:export_parquet' data_table.id %}?download=false">
+                        <i class="fas fa-save"></i> Guardar como Parquet
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
     
     <!-- Tabla de datos -->
     <div class="table-responsive">

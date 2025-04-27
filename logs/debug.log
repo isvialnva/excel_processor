@@ -387,3 +387,36 @@ INFO 2025-04-27 21:54:05,772 basehttp "GET /data_models/table/7/?page=9&page_siz
 INFO 2025-04-27 21:54:09,417 basehttp "GET /data_models/table/7/?page=8&page_size=50 HTTP/1.1" 200 73307
 INFO 2025-04-27 21:54:14,316 basehttp "GET /excel_files/9/ HTTP/1.1" 200 8252
 INFO 2025-04-27 21:58:46,222 basehttp "GET /data_models/table/7/ HTTP/1.1" 200 73455
+INFO 2025-04-27 22:13:25,069 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 22:13:40,004 basehttp "GET /excel_files/9/ HTTP/1.1" 200 8252
+INFO 2025-04-27 22:13:44,061 basehttp "GET /excel_files/list/ HTTP/1.1" 200 10011
+INFO 2025-04-27 22:13:47,758 basehttp "GET /excel_files/9/ HTTP/1.1" 200 8252
+INFO 2025-04-27 22:13:51,176 basehttp "GET /data_models/table/7/ HTTP/1.1" 200 73786
+INFO 2025-04-27 22:13:54,128 export_service Iniciando exportación a Parquet para tabla 9_report21
+INFO 2025-04-27 22:13:54,128 export_service Total de filas: 428
+INFO 2025-04-27 22:13:54,128 export_service Procesando en 1 lotes de 1000 filas
+INFO 2025-04-27 22:13:54,245 export_service Archivo Parquet generado exitosamente: /Users/isvialnva/Proyectos/excel_processor/excel_processor/media/exports/parquet/9_report21_20250427_221354.parquet
+INFO 2025-04-27 22:13:54,247 views Usuario anónimo ha descargado la tabla 9_report21 en formato Parquet
+INFO 2025-04-27 22:13:54,247 basehttp "GET /data_models/table/7/export/parquet/ HTTP/1.1" 200 34364
+INFO 2025-04-27 22:18:14,733 basehttp "GET /excel_files/list/ HTTP/1.1" 200 10011
+INFO 2025-04-27 22:18:16,085 basehttp "GET /excel_files/8/ HTTP/1.1" 200 9635
+INFO 2025-04-27 22:18:18,207 basehttp "GET /data_models/table/6/ HTTP/1.1" 200 73589
+INFO 2025-04-27 22:18:19,669 export_service Iniciando exportación a Parquet para tabla 8_Table
+INFO 2025-04-27 22:18:19,669 export_service Total de filas: 1124
+INFO 2025-04-27 22:18:19,669 export_service Procesando en 2 lotes de 1000 filas
+INFO 2025-04-27 22:18:19,837 export_service Archivo Parquet generado exitosamente: /Users/isvialnva/Proyectos/excel_processor/excel_processor/media/exports/parquet/8_table_20250427_221819.parquet
+INFO 2025-04-27 22:18:19,841 views Usuario anónimo ha descargado la tabla 8_Table en formato Parquet
+INFO 2025-04-27 22:18:19,842 basehttp "GET /data_models/table/6/export/parquet/ HTTP/1.1" 200 23979
+INFO 2025-04-27 22:19:19,412 basehttp "GET /excel_files/8/ HTTP/1.1" 200 9635
+INFO 2025-04-27 22:19:20,853 basehttp "GET /excel_files/list/ HTTP/1.1" 200 10011
+INFO 2025-04-27 22:31:33,724 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 22:31:41,074 basehttp "GET /excel_files/list/ HTTP/1.1" 200 10011
+INFO 2025-04-27 22:31:44,308 basehttp "GET /excel_files/9/ HTTP/1.1" 200 8252
+INFO 2025-04-27 22:31:46,496 basehttp "GET /data_models/table/7/ HTTP/1.1" 200 74426
+INFO 2025-04-27 22:31:49,827 export_service Iniciando exportación a Parquet para tabla 9_report21
+INFO 2025-04-27 22:31:49,828 export_service Total de filas: 428
+INFO 2025-04-27 22:31:49,828 export_service Procesando en 1 lotes de 1000 filas
+INFO 2025-04-27 22:31:49,950 export_service Archivo Parquet generado exitosamente: /Users/isvialnva/Proyectos/excel_processor/excel_processor/media/EXPORTS/PARQUET/9_report21_20250427_223149.parquet
+INFO 2025-04-27 22:31:49,950 export_service Exportación registrada con ID: 1
+INFO 2025-04-27 22:31:49,954 basehttp "GET /data_models/table/7/export/parquet/?download=false HTTP/1.1" 302 0
+INFO 2025-04-27 22:31:50,121 basehttp "GET /data_models/table/7/ HTTP/1.1" 200 74426

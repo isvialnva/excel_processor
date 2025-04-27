@@ -64,3 +64,32 @@ class DataCell(models.Model):
         elif data_type == 'boolean':
             return self.boolean_value
         return None
+
+
+class TableExport(models.Model):
+    """Modelo para almacenar información sobre exportaciones de tablas"""
+    FORMAT_CHOICES = (
+        ('parquet', 'Parquet'),
+        ('csv', 'CSV'),
+        ('excel', 'Excel'),
+        ('json', 'JSON'),
+    )
+
+    table = models.ForeignKey(DataTable, on_delete=models.CASCADE, related_name='exports')
+    file = models.FileField(upload_to='exports/')
+    format = models.CharField(max_length=10, choices=FORMAT_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True)
+    file_size = models.BigIntegerField(default=0)  # Tamaño en bytes
+
+    objects = models.Manager()
+
+    def __str__(self):
+        return f"{self.table.table_name} - {self.format} ({self.created_at.strftime('%Y-%m-%d %H:%M')})"
+
+    def get_file_size_display(self):
+        """Devuelve el tamaño del archivo en formato legible"""
+        size = self.file_size
+        for unit in ['B', 'KB', 'MB', 'GB']:
+            if size < 1024 or unit == 'GB':
+                return f"{size:.2f} {unit}"
+            size /= 1024

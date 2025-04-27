@@ -88,68 +88,83 @@ class DataModelFactory:
             start_idx: Índice de inicio para este lote
         """
         # Crear filas
-        data_rows = []
-        for i in range(len(batch_df)):
-            data_rows.append(DataRow(
-                table=data_table,
-                row_index=start_idx + i
-            ))
+        try:
+            logger.info(
+                f"Procesando lote para tabla {data_table.table_name}: {len(batch_df)} filas, {len(columns)} columnas")
 
-        # Insertar filas en la base de datos
-        data_rows = DataRow.objects.bulk_create(data_rows)
+            data_rows = []
+            for i in range(len(batch_df)):
+                data_rows.append(DataRow(
+                    table=data_table,
+                    row_index=start_idx + i
+                ))
 
-        # Crear celdas
-        data_cells = []
-        for i, row in enumerate(data_rows):
-            df_row = batch_df.iloc[i]
+            # Insertar filas en la base de datos
+            data_rows = DataRow.objects.bulk_create(data_rows)
 
-            for col in columns:
-                # Obtener valor original, usando el nombre original de la columna
-                original_value = df_row.get(col.original_name)
+            # Crear celdas
+            data_cells = []
+            for i, row in enumerate(data_rows):
+                df_row = batch_df.iloc[i]
 
-                # Crear celda con el valor adecuado según el tipo de datos
-                cell = DataCell(row=row, column_definition=col)
+                for col in columns:
+                    # Obtener valor original, usando el nombre original de la columna
+                    original_value = df_row.get(col.original_name)
 
-                # Asignar valor según tipo
-                if pd.isna(original_value):
-                    pass  # Dejar como NULL
-                elif col.data_type == 'string':
-                    cell.string_value = str(original_value)
-                elif col.data_type == 'integer':
-                    try:
-                        cell.integer_value = int(original_value)
-                    except (ValueError, TypeError):
+                    # Crear celda con el valor adecuado según el tipo de datos
+                    cell = DataCell(row=row, column_definition=col)
+
+                    # Asignar valor según tipo
+                    if pd.isna(original_value):
+                        pass  # Dejar como NULL
+                    elif col.data_type == 'string':
                         cell.string_value = str(original_value)
-                elif col.data_type == 'float':
-                    try:
-                        cell.float_value = float(original_value)
-                    except (ValueError, TypeError):
-                        cell.string_value = str(original_value)
-                elif col.data_type == 'date':
-                    try:
-                        cell.date_value = pd.to_datetime(original_value).date()
-                    except:
-                        cell.string_value = str(original_value)
-                elif col.data_type == 'datetime':
-                    try:
-                        cell.datetime_value = pd.to_datetime(original_value)
-                    except:
-                        cell.string_value = str(original_value)
-                elif col.data_type == 'boolean':
-                    # Manejar varios formatos de booleano
-                    bool_value = False
-                    if isinstance(original_value, bool):
-                        bool_value = original_value
-                    elif isinstance(original_value, (int, float)):
-                        bool_value = original_value > 0
-                    elif isinstance(original_value, str):
-                        bool_value = original_value.lower() in ('true', 'yes', 'si', '1', 'verdadero')
-                    cell.boolean_value = bool_value
+                    elif col.data_type == 'integer':
+                        try:
+                            cell.integer_value = int(original_value)
+                        except (ValueError, TypeError):
+                            cell.string_value = str(original_value)
+                    elif col.data_type == 'float':
+                        try:
+                            cell.float_value = float(original_value)
+                        except (ValueError, TypeError):
+                            cell.string_value = str(original_value)
 
-                data_cells.append(cell)
+                    elif col.data_type == 'date':
+                        try:
+                            cell.date_value = pd.to_datetime(original_value).date()
+                        except:
+                            cell.string_value = str(original_value)
 
-        # Insertar celdas en la base de datos
-        DataCell.objects.bulk_create(data_cells)
+                    elif col.data_type == 'datetime':
+                        try:
+                            naive_datetime = pd.to_datetime(original_value)
+                            from django.utils import timezone
+                            # Convertir a datetime con zona horaria
+                            cell.datetime_value = timezone.make_aware(naive_datetime)
+                        except:
+                            cell.string_value = str(original_value)
+
+                    elif col.data_type == 'boolean':
+                        # Manejar varios formatos de booleano
+                        bool_value = False
+                        if isinstance(original_value, bool):
+                            bool_value = original_value
+                        elif isinstance(original_value, (int, float)):
+                            bool_value = original_value > 0
+                        elif isinstance(original_value, str):
+                            bool_value = original_value.lower() in ('true', 'yes', 'si', '1', 'verdadero')
+                        cell.boolean_value = bool_value
+
+                    data_cells.append(cell)
+
+            # Insertar celdas en la base de datos
+            DataCell.objects.bulk_create(data_cells)
+            logger.info(f"Lote procesado: {len(data_rows)} filas, {len(data_cells)} celdas")
+        except Exception as e:
+            logger.error(f"Error en _process_batch: {str(e)}")
+            logger.error(traceback.format_exc())
+            raise ValueError("Error durante el procesamiento del lote")
 
     @staticmethod
     def get_table_data(data_table_id, page=1, page_size=100):

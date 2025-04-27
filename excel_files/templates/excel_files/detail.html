@@ -47,7 +47,9 @@
                     </div>
                     <div>
                         {% if sheet.data_table %}
-
+                         <a href="{% url 'data_models:view_table' sheet.data_table.id %}" class="btn btn-primary btn-sm">
+                            Ver datos
+                        </a>
                         {% else %}
                             <form method="post">
                                 {% csrf_token %}

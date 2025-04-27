@@ -1,3 +1,6 @@
+import logging
+import traceback
+
 from django.views.generic import CreateView, DetailView, ListView
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
@@ -6,10 +9,10 @@ from django.urls import reverse
 from django.db.models import Count
 from excel_files.models import ExcelFile, ExcelSheet
 from data_models.services.model_factory import DataModelFactory
-from data_models.models import DataTable
 from .services.file_manager import ExcelFileManager
 from .services.schema_detector import SchemaDetector
 
+logger = logging.getLogger(__name__)
 
 class ExcelFileUploadView(CreateView):
     model = ExcelFile
@@ -77,6 +80,8 @@ class ExcelFileDetailView(DetailView):
         excel_file = self.get_object()
         sheet_id = request.POST.get('sheet_id')
 
+        logger.debug(f"Iniciando procesamiento de hoja {sheet_id}")
+
         if not sheet_id:
             messages.error(request, 'No se especificó una hoja para procesar')
             return redirect('excel_files:detail', pk=excel_file.id)
@@ -84,15 +89,24 @@ class ExcelFileDetailView(DetailView):
         try:
             sheet = get_object_or_404(ExcelSheet, id=sheet_id, excel_file=excel_file)
 
-            # Crear o actualizar la tabla de datos para esta hoja
+            logger.info(f"Iniciando creación de tabla para hoja {sheet.id}: {sheet.name}")
+
             data_table = DataModelFactory.create_data_table_from_sheet(sheet.id)
 
-            messages.success(
-                request,
-                f'Hoja "{sheet.name}" procesada exitosamente. '
-                f'Se generaron {data_table.row_count} filas de datos.'
-            )
+            if data_table:
+                logger.info(f"Tabla creada exitosamente: {data_table.table_name} con {data_table.row_count} filas")
+
+                messages.success(
+                    request,
+                    f'Hoja "{sheet.name}" procesada exitosamente. '
+                    f'Se generaron {data_table.row_count} filas de datos.'
+                )
+            else:
+                logger.error(f"No se pudo crear la tabla de datos para la hoja {sheet.id}")
+                messages.error(request, 'Error al procesar la hoja: no se pudo crear la tabla de datos')
         except Exception as e:
+            logger.error(f"Error al procesar la hoja {sheet_id}: {str(e)}")
+            logger.error(traceback.format_exc())
             messages.error(request, f'Error al procesar la hoja: {str(e)}')
 
         return redirect('excel_files:detail', pk=excel_file.id)

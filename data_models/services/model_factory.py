@@ -1,7 +1,7 @@
 import logging
 import pandas as pd
-from parquetpro.data_models.models import DataTable, DataRow, DataCell
-from parquetpro.excel_processor.models import ExcelSheet, ColumnDefinition
+from data_models.models import DataTable, DataRow, DataCell
+from excel_files.models import ExcelSheet, ColumnDefinition
 from django.db import transaction
 import traceback
 

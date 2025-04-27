@@ -1,5 +1,5 @@
 from django.db import models
-from parquetpro.excel_processor.models import ExcelSheet
+from excel_files.models import ExcelSheet
 
 
 class DataTable(models.Model):
@@ -8,6 +8,8 @@ class DataTable(models.Model):
     table_name = models.CharField(max_length=255, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
     row_count = models.IntegerField(default=0)
+
+    objects = models.Manager()
 
     def __str__(self):
         return self.table_name
@@ -18,6 +20,8 @@ class DataRow(models.Model):
     table = models.ForeignKey(DataTable, on_delete=models.CASCADE, related_name='rows')
     row_index = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+    objects = models.Manager()
 
     class Meta:
         unique_together = ('table', 'row_index')
@@ -38,6 +42,8 @@ class DataCell(models.Model):
     date_value = models.DateField(blank=True, null=True)
     datetime_value = models.DateTimeField(blank=True, null=True)
     boolean_value = models.BooleanField(blank=True, null=True)
+
+    objects = models.Manager()
 
     def __str__(self):
         return f"{self.row} - {self.column_definition.name}"

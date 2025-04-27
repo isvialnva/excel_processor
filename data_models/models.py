@@ -33,7 +33,7 @@ class DataRow(models.Model):
 class DataCell(models.Model):
     """Modelo para almacenar celdas de datos de manera genérica"""
     row = models.ForeignKey(DataRow, on_delete=models.CASCADE, related_name='cells')
-    column_definition = models.ForeignKey('excel_processor.ColumnDefinition', on_delete=models.CASCADE)
+    column_definition = models.ForeignKey('excel_files.ColumnDefinition', on_delete=models.CASCADE)
 
     # Campos para almacenar diferentes tipos de datos
     string_value = models.TextField(blank=True, null=True)

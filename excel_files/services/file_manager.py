@@ -60,3 +60,16 @@ class ExcelFileManager:
             excel_file.save()
             logger.error(f"Error al leer hojas de Excel: {str(e)}")
             raise
+
+    def validate_excel_file(file_obj):
+        """Valida que el archivo sea un Excel válido"""
+        if not file_obj.name.endswith(('.xlsx', '.xls')):
+            raise ValueError("El archivo debe ser un Excel (.xlsx o .xls)")
+
+        # Verificar que sea un Excel válido
+        try:
+            pd.ExcelFile(file_obj)
+        except Exception as e:
+            raise ValueError(f"El archivo no es un Excel válido: {str(e)}")
+
+        return True

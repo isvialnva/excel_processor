@@ -1,0 +1,11 @@
+INFO 2025-04-27 18:14:42,894 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-27 18:14:46,304 log Not Found: /
+WARNING 2025-04-27 18:14:46,305 basehttp "GET / HTTP/1.1" 404 2321
+WARNING 2025-04-27 18:14:49,701 log Not Found: /
+WARNING 2025-04-27 18:14:49,702 basehttp "GET / HTTP/1.1" 404 2321
+WARNING 2025-04-27 18:14:58,094 log Not Found: /excel_files/
+WARNING 2025-04-27 18:14:58,095 basehttp "GET /excel_files/ HTTP/1.1" 404 2504
+WARNING 2025-04-27 18:15:07,454 log Not Found: /ExcelFileUploadView/
+WARNING 2025-04-27 18:15:07,454 basehttp "GET /ExcelFileUploadView/ HTTP/1.1" 404 2399
+INFO 2025-04-27 19:05:02,627 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/excel_files/services/file_manager.py changed, reloading.
+INFO 2025-04-27 19:05:03,685 autoreload Watching for file changes with StatReloader

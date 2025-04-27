@@ -420,3 +420,108 @@ INFO 2025-04-27 22:31:49,950 export_service Archivo Parquet generado exitosament
 INFO 2025-04-27 22:31:49,950 export_service Exportación registrada con ID: 1
 INFO 2025-04-27 22:31:49,954 basehttp "GET /data_models/table/7/export/parquet/?download=false HTTP/1.1" 302 0
 INFO 2025-04-27 22:31:50,121 basehttp "GET /data_models/table/7/ HTTP/1.1" 200 74426
+INFO 2025-04-27 22:34:03,249 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 22:34:35,680 basehttp "GET /excel_files/9/ HTTP/1.1" 200 8252
+INFO 2025-04-27 22:34:37,682 basehttp "GET /excel_files/list/ HTTP/1.1" 200 10011
+INFO 2025-04-27 22:35:27,447 basehttp "GET /excel_files/9/ HTTP/1.1" 200 8252
+INFO 2025-04-27 22:35:28,866 basehttp "GET /data_models/table/7/ HTTP/1.1" 200 74426
+INFO 2025-04-27 22:38:15,911 basehttp "GET /excel_files/9/ HTTP/1.1" 200 8252
+INFO 2025-04-27 22:38:18,150 basehttp "GET /excel_files/list/ HTTP/1.1" 200 10011
+INFO 2025-04-27 22:38:23,042 basehttp "GET /excel_files/8/ HTTP/1.1" 200 9635
+INFO 2025-04-27 22:38:24,385 basehttp "GET /data_models/table/6/ HTTP/1.1" 200 74229
+INFO 2025-04-27 22:38:26,583 export_service Iniciando exportación a Parquet para tabla 8_Table
+INFO 2025-04-27 22:38:26,583 export_service Total de filas: 1124
+INFO 2025-04-27 22:38:26,583 export_service Procesando en 2 lotes de 1000 filas
+INFO 2025-04-27 22:38:26,760 export_service Archivo Parquet generado exitosamente: /Users/isvialnva/Proyectos/excel_processor/excel_processor/media/EXPORTS/PARQUET/8_table_20250427_223826.parquet
+INFO 2025-04-27 22:38:26,760 export_service Exportación registrada con ID: 2
+INFO 2025-04-27 22:38:26,766 basehttp "GET /data_models/table/6/export/parquet/?download=false HTTP/1.1" 302 0
+INFO 2025-04-27 22:38:26,895 basehttp "GET /data_models/table/6/ HTTP/1.1" 200 74229
+INFO 2025-04-27 22:41:41,457 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/data_models/templatetags/data_model_filters.py changed, reloading.
+INFO 2025-04-27 22:41:42,665 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 22:42:40,427 basehttp "GET /excel_files/8/ HTTP/1.1" 200 9635
+INFO 2025-04-27 22:42:41,869 basehttp "GET /data_models/table/6/ HTTP/1.1" 200 70496
+INFO 2025-04-27 22:44:07,573 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/data_models/templatetags/data_model_filters.py changed, reloading.
+INFO 2025-04-27 22:44:08,551 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 22:47:11,858 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/data_models/models.py changed, reloading.
+INFO 2025-04-27 22:47:12,793 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 22:48:03,707 basehttp "GET /excel_files/8/ HTTP/1.1" 200 9635
+ERROR 2025-04-27 22:48:05,370 log Internal Server Error: /data_models/table/6/
+Traceback (most recent call last):
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/isvialnva/Proyectos/excel_processor/excel_processor/data_models/views.py", line 40, in view_table_data
+    return render(request, 'data_models/view_table.html', context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "/Users/isvialnva/Proyectos/excel_processor/.ent_processor/lib/python3.10/site-packages/django/template/base.py", line 749, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/Users/isvialnva/Proyectos/excel_processor/excel_processor/data_models/templatetags/data_model_filters.py", line 34, in format_cell_value
+    value = row.get(column['name'])
+AttributeError: 'str' object has no attribute 'get'
+ERROR 2025-04-27 22:48:05,381 basehttp "GET /data_models/table/6/ HTTP/1.1" 500 313529
+INFO 2025-04-27 22:48:43,434 basehttp "GET /data_models/table/6/ HTTP/1.1" 200 68902
+INFO 2025-04-27 22:48:49,688 basehttp "GET /excel_files/8/ HTTP/1.1" 200 9635
+INFO 2025-04-27 22:48:51,039 basehttp "GET /data_models/table/6/ HTTP/1.1" 200 68902
+INFO 2025-04-27 22:49:14,065 autoreload /Users/isvialnva/Proyectos/excel_processor/excel_processor/data_models/models.py changed, reloading.
+INFO 2025-04-27 22:49:15,059 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 22:49:21,519 basehttp "GET /data_models/table/6/ HTTP/1.1" 200 68902
+INFO 2025-04-27 22:49:25,014 basehttp "GET /excel_files/8/ HTTP/1.1" 200 9635
+INFO 2025-04-27 22:49:26,297 basehttp "GET /data_models/table/6/ HTTP/1.1" 200 68902
+INFO 2025-04-27 22:49:29,599 basehttp "GET /excel_files/8/ HTTP/1.1" 200 9635
+INFO 2025-04-27 22:49:31,181 basehttp "GET /excel_files/list/ HTTP/1.1" 200 10011
+INFO 2025-04-27 22:49:34,485 basehttp "POST /excel_files/list/ HTTP/1.1" 302 0
+INFO 2025-04-27 22:49:34,500 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6559
+INFO 2025-04-27 22:49:36,760 basehttp "POST /excel_files/list/ HTTP/1.1" 302 0
+INFO 2025-04-27 22:49:36,774 basehttp "GET /excel_files/list/ HTTP/1.1" 200 2822
+INFO 2025-04-27 22:50:09,706 basehttp "GET /excel_files/upload/ HTTP/1.1" 200 826
+INFO 2025-04-27 22:50:24,648 basehttp "POST /excel_files/upload/ HTTP/1.1" 302 0
+INFO 2025-04-27 22:50:24,666 basehttp "GET /excel_files/10/ HTTP/1.1" 200 8602
+DEBUG 2025-04-27 22:50:26,255 views Iniciando procesamiento de hoja 10
+INFO 2025-04-27 22:50:26,257 views Iniciando creación de tabla para hoja 10: report21
+INFO 2025-04-27 22:50:26,383 model_factory Procesando lote para tabla 10_report21: 428 filas, 18 columnas
+INFO 2025-04-27 22:50:28,315 model_factory Lote procesado: 428 filas, 7704 celdas
+INFO 2025-04-27 22:50:28,324 views Tabla creada exitosamente: 10_report21 con 428 filas
+INFO 2025-04-27 22:50:28,326 basehttp "POST /excel_files/10/ HTTP/1.1" 302 0
+INFO 2025-04-27 22:50:28,343 basehttp "GET /excel_files/10/ HTTP/1.1" 200 8252
+INFO 2025-04-27 22:50:29,718 basehttp "GET /data_models/table/8/ HTTP/1.1" 200 59735
+INFO 2025-04-27 22:50:45,563 basehttp "GET /data_models/table/8/ HTTP/1.1" 200 74393

@@ -574,3 +574,8 @@ INFO 2025-04-27 23:08:54,652 basehttp "GET /excel_files/12/ HTTP/1.1" 200 9647
 INFO 2025-04-27 23:08:56,679 basehttp "GET /excel_files/list/ HTTP/1.1" 200 10020
 INFO 2025-04-27 23:09:02,433 basehttp "GET /excel_files/11/ HTTP/1.1" 200 8255
 INFO 2025-04-27 23:09:04,789 basehttp "GET /data_models/table/9/ HTTP/1.1" 200 73618
+INFO 2025-04-27 23:09:58,691 autoreload Watching for file changes with StatReloader
+INFO 2025-04-27 23:10:00,859 basehttp "GET /excel_files/11/ HTTP/1.1" 200 8255
+INFO 2025-04-27 23:10:02,622 basehttp "GET /excel_files/list/ HTTP/1.1" 200 10020
+INFO 2025-04-27 23:10:13,063 basehttp "GET /excel_files/list/?processed=0 HTTP/1.1" 200 10020
+INFO 2025-04-27 23:13:00,838 autoreload Watching for file changes with StatReloader

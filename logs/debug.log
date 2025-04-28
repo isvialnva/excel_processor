@@ -579,3 +579,56 @@ INFO 2025-04-27 23:10:00,859 basehttp "GET /excel_files/11/ HTTP/1.1" 200 8255
 INFO 2025-04-27 23:10:02,622 basehttp "GET /excel_files/list/ HTTP/1.1" 200 10020
 INFO 2025-04-27 23:10:13,063 basehttp "GET /excel_files/list/?processed=0 HTTP/1.1" 200 10020
 INFO 2025-04-27 23:13:00,838 autoreload Watching for file changes with StatReloader
+INFO 2025-04-28 08:30:11,598 autoreload Watching for file changes with StatReloader
+INFO 2025-04-28 08:30:30,547 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-28 08:30:34,498 log Not Found: /
+WARNING 2025-04-28 08:30:34,500 basehttp "GET / HTTP/1.1" 404 2476
+WARNING 2025-04-28 08:30:48,038 log Not Found: /excel_files/
+WARNING 2025-04-28 08:30:48,038 basehttp "GET /excel_files/ HTTP/1.1" 404 3180
+INFO 2025-04-28 08:30:52,920 basehttp "GET /excel_files/list/ HTTP/1.1" 200 10020
+INFO 2025-04-28 08:31:56,035 basehttp "POST /excel_files/list/ HTTP/1.1" 302 0
+INFO 2025-04-28 08:31:56,044 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6564
+INFO 2025-04-28 08:31:58,044 basehttp "POST /excel_files/list/ HTTP/1.1" 302 0
+INFO 2025-04-28 08:31:58,052 basehttp "GET /excel_files/list/ HTTP/1.1" 200 2822
+INFO 2025-04-28 08:32:00,050 basehttp "GET /excel_files/upload/ HTTP/1.1" 200 826
+ERROR 2025-04-28 08:32:51,423 file_manager Error al leer hojas de Excel: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+INFO 2025-04-28 08:32:51,424 basehttp "POST /excel_files/upload/ HTTP/1.1" 302 0
+INFO 2025-04-28 08:32:51,433 basehttp "GET /excel_files/13/ HTTP/1.1" 200 1277
+INFO 2025-04-28 08:32:57,497 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6756
+INFO 2025-04-28 08:33:01,036 basehttp "GET /excel_files/13/ HTTP/1.1" 200 1277
+INFO 2025-04-28 08:33:07,400 basehttp "POST /excel_files/list/ HTTP/1.1" 302 0
+INFO 2025-04-28 08:33:07,409 basehttp "GET /excel_files/list/ HTTP/1.1" 200 2822
+INFO 2025-04-28 08:33:08,961 basehttp "GET /excel_files/upload/ HTTP/1.1" 200 826
+ERROR 2025-04-28 08:33:22,690 file_manager Error al leer hojas de Excel: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+INFO 2025-04-28 08:33:22,692 basehttp "POST /excel_files/upload/ HTTP/1.1" 302 0
+INFO 2025-04-28 08:33:22,701 basehttp "GET /excel_files/14/ HTTP/1.1" 200 1277
+INFO 2025-04-28 08:33:44,143 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6756
+INFO 2025-04-28 08:33:47,951 basehttp "POST /excel_files/list/ HTTP/1.1" 302 0
+INFO 2025-04-28 08:33:47,960 basehttp "GET /excel_files/list/ HTTP/1.1" 200 2822
+INFO 2025-04-28 08:34:29,256 autoreload Watching for file changes with StatReloader
+INFO 2025-04-28 08:34:32,105 basehttp "GET /excel_files/upload/ HTTP/1.1" 200 826
+INFO 2025-04-28 08:34:45,050 basehttp "POST /excel_files/upload/ HTTP/1.1" 302 0
+INFO 2025-04-28 08:34:45,079 basehttp "GET /excel_files/15/ HTTP/1.1" 200 4198
+DEBUG 2025-04-28 08:34:48,741 views Iniciando procesamiento de hoja 13
+INFO 2025-04-28 08:34:48,742 views Iniciando creación de tabla para hoja 13: Prorroga
+INFO 2025-04-28 08:34:48,827 model_factory Procesando lote para tabla 15_Prorroga: 1000 filas, 4 columnas
+INFO 2025-04-28 08:34:49,346 model_factory Lote procesado: 1000 filas, 4000 celdas
+INFO 2025-04-28 08:34:49,349 model_factory Procesando lote para tabla 15_Prorroga: 48 filas, 4 columnas
+INFO 2025-04-28 08:34:49,383 model_factory Lote procesado: 48 filas, 192 celdas
+INFO 2025-04-28 08:34:49,396 views Tabla creada exitosamente: 15_Prorroga con 1048 filas
+INFO 2025-04-28 08:34:49,398 basehttp "POST /excel_files/15/ HTTP/1.1" 302 0
+INFO 2025-04-28 08:34:49,414 basehttp "GET /excel_files/15/ HTTP/1.1" 200 3849
+INFO 2025-04-28 08:34:52,356 basehttp "GET /data_models/table/11/ HTTP/1.1" 200 20970
+INFO 2025-04-28 08:35:01,808 export_service Iniciando exportación a Parquet para tabla 15_Prorroga
+INFO 2025-04-28 08:35:01,809 export_service Total de filas: 1048
+INFO 2025-04-28 08:35:01,809 export_service Procesando en 2 lotes de 1000 filas
+INFO 2025-04-28 08:35:01,853 export_service Archivo Parquet generado exitosamente: G:\Proyectos\excel_processor\excel_processor\media\EXPORTS\PARQUET\15_prorroga_20250428_133501.parquet
+INFO 2025-04-28 08:35:01,854 export_service Exportación registrada con ID: 5
+INFO 2025-04-28 08:35:01,856 basehttp "GET /data_models/table/11/export/parquet/?download=false HTTP/1.1" 302 0
+INFO 2025-04-28 08:35:01,924 basehttp "GET /data_models/table/11/ HTTP/1.1" 200 20970
+INFO 2025-04-28 09:10:16,152 autoreload Watching for file changes with StatReloader
+INFO 2025-04-28 09:11:18,638 autoreload Watching for file changes with StatReloader
+INFO 2025-04-28 09:11:24,972 basehttp "GET /excel_files/15/ HTTP/1.1" 200 3849
+INFO 2025-04-28 09:11:26,475 basehttp "GET /excel_files/list/ HTTP/1.1" 200 6563
+INFO 2025-04-28 09:11:28,827 basehttp "POST /excel_files/list/ HTTP/1.1" 302 0
+INFO 2025-04-28 09:11:28,840 basehttp "GET /excel_files/list/ HTTP/1.1" 200 2822
